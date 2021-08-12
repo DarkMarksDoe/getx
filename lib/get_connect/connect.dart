@@ -314,13 +314,14 @@ class GetConnect extends GetConnectInterface {
 
       final listError = res.body['errors'];
       if ((listError is List) && listError.isNotEmpty) {
-        return GraphQLResponse<T>(
+        /* return GraphQLResponse<T>(
             graphQLErrors: listError
                 .map((e) => GraphQLError(
                       code: e['extensions']['code']?.toString(),
                       message: e['message']?.toString(),
                     ))
                 .toList());
+        */
       }
       return GraphQLResponse<T>.fromResponse(res);
     } on Exception catch (_) {
@@ -349,13 +350,14 @@ class GetConnect extends GetConnectInterface {
 
       final listError = res.body['errors'];
       if ((listError is List) && listError.isNotEmpty) {
-        return GraphQLResponse<T>(
+        /* return GraphQLResponse<T>(
             graphQLErrors: listError
                 .map((e) => GraphQLError(
                       code: e['extensions']['code']?.toString(),
                       message: e['message']?.toString(),
                     ))
                 .toList());
+        */
       }
       return GraphQLResponse<T>.fromResponse(res);
     } on Exception catch (_) {
